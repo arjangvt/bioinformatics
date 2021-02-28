@@ -37,10 +37,6 @@ import glob
 from Bio.PDB import PDBParser
 from Bio.PDB.DSSP import DSSP
 
-# This will eventually goes into a setting file
-#"C:\Users\arjan\Desktop\Research\SecondaryStructurePrediction\PDB\*.pdb"
-# We can read the protein names from a directopry (e,g predownloaded)
-#ProteinFolder = "PDB/*.pdb"
 
 def ReadProteinDir(folder):
 
@@ -72,7 +68,6 @@ def CreateKmers(dssp, k):
 
 def getSS(files_list, path_list, k):
     for i in range(len(files_list)):
-        print(files_list[i])
         p = PDBParser()
         structure = p.get_structure(files_list[i].split(".")[0], path_list[i])
         model = structure[0]
